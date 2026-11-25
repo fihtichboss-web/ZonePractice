@@ -1,0 +1,19 @@
+name: Build phar
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: php -l src/ZonePractice/Main.php
+      - run: php -dphar.readonly=0 build.php
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ZonePractice
+          path: ZonePractice.phar

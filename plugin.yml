@@ -1,0 +1,29 @@
+name: ZonePractice
+main: ZonePractice\Main
+version: 1.0.0
+api: 5.0.0
+author: you
+
+commands:
+  duel:
+    description: Встать в очередь на дуэль
+    usage: /duel <1v1|2v2>
+    permission: zonepractice.play
+  ffa:
+    description: Зайти на FFA
+    usage: /ffa
+    permission: zonepractice.play
+  leave:
+    description: Выйти в лобби
+    usage: /leave
+    permission: zonepractice.play
+  zp:
+    description: Настройка (только админ)
+    usage: /zp <setlobby|setffa|setarena>
+    permission: zonepractice.admin
+
+permissions:
+  zonepractice.play:
+    default: true
+  zonepractice.admin:
+    default: op

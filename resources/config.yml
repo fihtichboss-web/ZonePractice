@@ -1,0 +1,62 @@
+# ====== ZonePractice ======
+# Точки лобби и FFA ставятся командами в игре: /zp setlobby и /zp setffa
+
+lobby:
+  world: world
+  x: 0
+  y: 100
+  z: 0
+
+ffa:
+  world: world
+  x: 0
+  y: 100
+  z: 0
+
+# ====== КНОКБЭК (подбирай цифры под mc-zone) ======
+# horizontal - сила отброса назад (больше = дальше назад)
+# vertical   - сила подброса вверх (больше = выше)
+# attack-delay - задержка между ударами в тиках (в ваниле 10, меньше = быстрее комбо)
+knockback:
+  horizontal: 0.3
+  vertical: 1.1
+  attack-delay: 4
+
+# size = игроков в каждой команде
+modes:
+  "1v1":
+    size: 1
+    kit: duel
+  "2v2":
+    size: 2
+    kit: duel
+
+# ====== КИТЫ ======
+# armor: шлем, нагрудник, поножи, ботинки
+# items: название:количество
+# effects: название:уровень (0 = первый уровень)
+kits:
+  duel:
+    armor: [diamond_helmet, diamond_chestplate, diamond_leggings, diamond_boots]
+    items:
+      - "diamond_sword:1"
+      - "golden_apple:16"
+      - "ender_pearl:16"
+      - "cooked_beef:32"
+    effects: []
+  ffa:
+    armor: [iron_helmet, iron_chestplate, iron_leggings, iron_boots]
+    items:
+      - "iron_sword:1"
+      - "golden_apple:8"
+      - "cooked_beef:32"
+    effects: []
+
+# ====== АРЕНЫ ======
+# Лучше ставить командой: /zp setarena <имя> 1  и  /zp setarena <имя> 2
+# (встань на точку появления игрока 1 / игрока 2)
+arenas:
+  arena1:
+    world: world
+    p1: {x: 0, y: 100, z: 0}
+    p2: {x: 10, y: 100, z: 0}
